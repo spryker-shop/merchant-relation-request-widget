@@ -29,62 +29,37 @@ class MerchantRelationRequestMenuItemWidget extends AbstractWidget
      */
     protected const PAGE_KEY_MERCHANT_RELATION_REQUEST = 'merchantRelationRequest';
 
-    /**
-     * @param string $activePage
-     */
     public function __construct(string $activePage)
     {
         $this->addIsVisibleParameter();
         $this->addIsActivePageParameter($activePage);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'MerchantRelationRequestMenuItemWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@MerchantRelationRequestWidget/views/merchant-relation-request-menu-item/merchant-relation-request-menu-item.twig';
     }
 
-    /**
-     * @return void
-     */
     protected function addIsVisibleParameter(): void
     {
         $this->addParameter(static::PARAMETER_IS_VISIBLE, $this->isWidgetVisible());
     }
 
-    /**
-     * @param string $activePage
-     *
-     * @return void
-     */
     protected function addIsActivePageParameter(string $activePage): void
     {
         $this->addParameter(static::PARAMETER_IS_ACTIVE_PAGE, $this->isMerchantRelationRequestPageActive($activePage));
     }
 
-    /**
-     * @param string $activePage
-     *
-     * @return bool
-     */
     protected function isMerchantRelationRequestPageActive(string $activePage): bool
     {
         return $activePage === static::PAGE_KEY_MERCHANT_RELATION_REQUEST;
     }
 
-    /**
-     * @return bool
-     */
     protected function isWidgetVisible(): bool
     {
         return (bool)$this->getFactory()->getCompanyUserClient()->findCompanyUser();

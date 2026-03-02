@@ -27,11 +27,6 @@ class MerchantRelationRequestWidgetDependencyProvider extends AbstractBundleDepe
      */
     public const CLIENT_COMPANY_USER = 'CLIENT_COMPANY_USER';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -41,11 +36,6 @@ class MerchantRelationRequestWidgetDependencyProvider extends AbstractBundleDepe
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addMerchantStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_MERCHANT_STORAGE, function (Container $container) {
@@ -57,11 +47,6 @@ class MerchantRelationRequestWidgetDependencyProvider extends AbstractBundleDepe
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCompanyUserClient(Container $container): Container
     {
         $container->set(static::CLIENT_COMPANY_USER, function (Container $container) {

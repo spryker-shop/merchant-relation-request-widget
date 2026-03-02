@@ -9,10 +9,5 @@ namespace SprykerShop\Yves\MerchantRelationRequestWidget\Checker;
 
 interface MerchantRelationRequestCheckerInterface
 {
-    /**
-     * @param string $merchantReference
-     *
-     * @return bool
-     */
     public function isMerchantApplicableForRequest(string $merchantReference): bool;
 }

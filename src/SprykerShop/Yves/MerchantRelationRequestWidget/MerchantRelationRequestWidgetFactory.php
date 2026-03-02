@@ -18,9 +18,6 @@ use SprykerShop\Yves\MerchantRelationRequestWidget\Dependency\Client\MerchantRel
  */
 class MerchantRelationRequestWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\MerchantRelationRequestWidget\Checker\MerchantRelationRequestCheckerInterface
-     */
     public function createMerchantRelationRequestChecker(): MerchantRelationRequestCheckerInterface
     {
         return new MerchantRelationRequestChecker(
@@ -28,17 +25,11 @@ class MerchantRelationRequestWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantRelationRequestWidget\Dependency\Client\MerchantRelationRequestWidgetToMerchantStorageClientInterface
-     */
     public function getMerchantStorageClient(): MerchantRelationRequestWidgetToMerchantStorageClientInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestWidgetDependencyProvider::CLIENT_MERCHANT_STORAGE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantRelationRequestWidget\Dependency\Client\MerchantRelationRequestWidgetToCompanyUserClientInterface
-     */
     public function getCompanyUserClient(): MerchantRelationRequestWidgetToCompanyUserClientInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestWidgetDependencyProvider::CLIENT_COMPANY_USER);

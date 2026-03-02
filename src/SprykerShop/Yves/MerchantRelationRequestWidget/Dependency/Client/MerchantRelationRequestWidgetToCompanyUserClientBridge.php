@@ -24,9 +24,6 @@ class MerchantRelationRequestWidgetToCompanyUserClientBridge implements Merchant
         $this->companyUserClient = $companyUserClient;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer|null
-     */
     public function findCompanyUser(): ?CompanyUserTransfer
     {
         return $this->companyUserClient->findCompanyUser();

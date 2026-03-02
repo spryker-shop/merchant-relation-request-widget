@@ -27,20 +27,12 @@ class MerchantRelationRequestChecker implements MerchantRelationRequestCheckerIn
      */
     protected MerchantRelationRequestWidgetToMerchantStorageClientInterface $merchantStorageClient;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantRelationRequestWidget\Dependency\Client\MerchantRelationRequestWidgetToMerchantStorageClientInterface $merchantStorageClient
-     */
     public function __construct(
         MerchantRelationRequestWidgetToMerchantStorageClientInterface $merchantStorageClient
     ) {
         $this->merchantStorageClient = $merchantStorageClient;
     }
 
-    /**
-     * @param string $merchantReference
-     *
-     * @return bool
-     */
     public function isMerchantApplicableForRequest(string $merchantReference): bool
     {
         if (!$this->can(static::PERMISSION_KEY_CREATE_MERCHANT_RELATION_REQUEST)) {
